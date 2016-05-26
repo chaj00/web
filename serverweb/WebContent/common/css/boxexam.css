@@ -1,0 +1,32 @@
+@CHARSET "EUC-KR";
+
+h1{
+	color: #3e9499
+}
+p{
+	font-size: 10pt
+}
+/* #box1{
+	
+	
+} */
+#box{
+	width:1100px;
+	height:90px;
+	margin: 30px;
+	padding: 30px 20px 20px 90px;
+	background-color: #a7cece;
+	background-image: url("../../images/background.gif");
+	background-repeat: no-repeat;
+	font-style: italic;
+	overflow: auto;
+
+}
+/* #box3{
+
+	
+} */
+/* #box4{
+
+	
+}  */
