@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+	<title>Insert title here</title>
+	<style type="text/css">
+		/*
+		하이퍼링크가 연결된 태그에서 발생하는 상황에 효과를 주기 위해서 정의하는 전택자로
+		a:HOVER는 a:LINK와 a:VISIED 다음에 정의되어야 하며
+		a:ACTIVE는 a:HOVER다음에 정의되어야 한다.
+		*/
+		
+		a:LINK {/*방문전 */
+			color:red; 
+			text-decoration: none;
+		}
+		a:VISITED { /*방문후  */
+			color: yellow;
+		}
+		a:HOVER { /* 하이퍼링크가 아니라고 하더라도 마우스 포인터를 올려놓는 시점  */
+			color: blue; 
+			text-decoration: underline;
+		}
+		a:ACTIVE { /* 마우스를 클릭하는 시점  */
+			color:black;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>하이퍼링크에서 사용할 수 있는 CSS속성들</h1>
+	<a href="http://www.naver.com">네이버</a>
+	<a href="http://www.daum.net">한메일</a>
+	<a href="http://www.google.com">구글</a>
+</body>
+</html>

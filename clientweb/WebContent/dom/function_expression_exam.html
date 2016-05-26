@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload =function(){
+		document.getElementById("btn1").onclick = test
+		document. getElementById("btn2").onclick = function(){
+			test2()
+		}
+	}
+	function test(){
+		alert("test")
+	}
+	function test2(){
+		alert("test2")
+	}
+
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="1번버튼"/>
+		<input type="button" value="2번버튼"/>
+		<input type="button" value="3번버튼"/>
+		<input type="button" value="4번버튼"/>
+	</form>
+</body>
+</html>

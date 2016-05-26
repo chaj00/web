@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+	<title>Insert title here</title>
+	<style type="text/css">
+	body {
+		font: 14px 굴림체;
+		text-align: center;
+	}
+	.main {
+	  margin-top:15px;
+	  width:700px;
+	}
+	div.heading {
+		font: 20px HY견고딕;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	
+	div.subheading {
+		font: 15px HY견고딕;
+		font-style: italic;
+		margin-bottom: 10px;
+	}
+	
+	.img {
+		float: left;
+		width: 350px;
+		
+	}
+	
+	div.field {
+	  
+	  margin-bottom:5px;
+	  text-align:right;
+	}
+	form{
+	padding-left:0px;
+		
+	}
+	</style>
+	
+	<script type="text/javascript">
+		function order(){
+			select = document.getElementById("name")
+			room = select.options[select.selectedIndex].value
+			
+			bbq = document.getElementById("bbq").value
+			blanket = document.getElementById("blanket").value
+			count = document.getElementById("count").value
+
+			if(count.length!=0 & blanket>Math.round(eval(count/2))  ){
+				alert("이불은 2명당 1개 입니다.\n다시입력해주세요")
+				document.getElementById("blanket").value = ""
+			} 
+			
+			room_price = 100000
+			bbq_price = eval(bbq*10000)
+			blanket_price = eval(blanket*10000)	
+			count_price = eval(eval(count-2)*20000)
+			subtotal = eval(room_price + bbq_price + blanket_price + count_price)
+			tax = eval(subtotal*0.1)	
+			total = eval(subtotal+tax)
+			
+			document.getElementById("result_room").innerHTML = "객실명 : " +room
+			document.getElementById("result_bbq").innerHTML = "바베큐: " + bbq
+			document.getElementById("result_blanket").innerHTML = "이불수 : " + blanket
+			document.getElementById("result_count").innerHTML = "인원수 : " + count
+			document.getElementById("result_subtotal").innerHTML = "금액 : " + subtotal
+			document.getElementById("result_tax").innerHTML = "세금 : " + tax
+			document.getElementById("result_total").innerHTML ="총금액 : " + total
+			
+			document.getElementById("subtotal").value = subtotal
+			document.getElementById("tax").value =tax
+			document.getElementById("total").value = total
+		}
+	
+	</script>
+
+</head>
+<body>
+	<div class="main">
+		<div class="heading">펜션예약사항</div>
+		<div class="subheading">비수기 세일입니다. 펜션의 모든 방을 10만원에 단, 모든 방은
+			2인용입니다.!!</div>
+		<div class="img">
+			<img src="../images/pension.jpg" width="300" height="300" />
+		</div>
+		<form name="orderform" action="" method="post">
+			<div class="field">
+				객실명: <select name="name" id="name">
+					<option>루비</option>
+					<option>에메랄드</option>
+					<option>사파이어</option>
+					<option>스카이1호</option>
+					<option>별님실</option>
+				</select>
+			</div>
+			<div class="field">
+				바베큐시설이용: 
+				<input type="text" id="bbq" name="bbq" value=""
+					onchange="order()" />
+			</div>
+			<div class="field">
+				이불추가: <input type="text" id="blanket" name="blanket" value=""
+					onchange="order()" />
+			</div>
+			<div class="field">
+				인원수: <input type="text" id="count" name="count" value=""
+					 onchange="order()"/>
+			</div>
+			<div class="field">
+				금액: <input type="text" id="subtotal" name="subtotal" value=""
+					readonly="readonly" />
+			</div>
+			<div class="field">
+				부가세: <input type="text" id="tax" name="tax" value=""
+					readonly="readonly" />
+			</div>
+			<div class="field">
+				총금액: <input type="text" id="total" name="total" value=""
+					readonly="readonly" />
+			</div>
+			<div class="field">
+				<input type="button" value="Place Order" 
+						onclick="exec(this.form)"/>
+			</div>
+			
+			<div id="result_room"></div>
+			<div id="result_bbq"></div>
+			<div id="result_blanket"></div>
+			<div id="result_count"></div>
+			<div id="result_subtotal"></div>
+			<div id="result_tax"></div>
+			<div id="result_total"></div>
+	</form>
+	</div>
+</body>
+</html>

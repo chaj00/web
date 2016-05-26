@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<style type="text/css">
+	table {
+		border-style: none;
+	}
+	
+	td, th {
+		border-style: solid;
+		border-width: 2px;
+		border-color: #ffffff;
+		border-left-color: #ffffff;
+		border-right-color: #ffffff;
+		height: 60px;
+		text-align: center;
+	}
+	
+	#top {
+		color: blue;
+		text-decoration: none;
+		font-size: 20pt;
+	}
+	
+	#week {
+		background-color: #ffcc66;
+		border-width: 2px;
+		height: 60px;
+	}
+	#sunday{
+		color: red;
+	}
+	#satday{
+		color:blue;
+	}
+	#day,#sunday, #satday{
+		background-color: #ffff99;
+	}
+	
+	#today{
+		background-color: #ffcccc;
+	}
+	</style>
+	
+</head>
+<body>
+	<div id="result"></div>
+	
+	<script type="text/javascript">
+		lastDate = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31,30,31)
+		
+		cal = new Date()
+		year = cal.getFullYear()
+		month = cal.getMonth()+1
+		date = cal.getDate()
+		day = cal.getDay()
+		
+		if( (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ){
+			lastDate[1] = 29;			
+		}
+		function show(){
+			display = "<table border='1px' align='center' width='420px' style='border-collapse:collapse'>";		
+			display += "<td id='top' colspan='7'>";
+			display += "<a id='top' href='#' onclick='prev()'> << </a>&nbsp;&nbsp;&nbsp;";
+			display += year + "년 "+ month + "월";
+			display += "&nbsp;&nbsp;&nbsp;<a id='top' href='#' onclick='next()'> >> </a>";
+			display += "</td>";
+			display += "<tr id='week'>";
+			display += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+			display += "</tr>";
+			display += "<tr>";
+			
+			firstDay = new Date(year,month-1,1).getDay()
+			for(i=0;i<firstDay; i++){
+				if( i== 0){
+				   	display += "<td id='sunday'>&nbsp</td>";
+				}else if(i == 6){
+				  	display += "<td id='satday'>&nbsp</td>";
+				}else{
+					display += "<td id='day'>&nbsp</td>"
+				}
+			}
+			
+			for( i = 1 ; i <= lastDate[month-1] ; i++ ){
+				if(i==date){
+					display += "<td id='today'>" + i +"</td>";
+				}else{
+					if( new Date(year,month-1,i).getDay() == 0){
+						display += "<tr>"
+				    	display += "<td id='sunday'>" + i +"</td>";
+				    }else if(new Date(year,month-1,i).getDay() == 6){
+				     	display += "<td id='satday'>" + i +"</td>";
+				     	display += "</tr>"
+				    }else{
+				     	display += "<td id='day'>" + i + "</td>";
+				    } 	
+				}
+			}
+	
+			document.getElementById("result").innerHTML = display
+		}
+		function next(){
+			month += 1
+			date = 1
+			if(month>=13){
+				year += 1;
+				month = 1
+			}
+			show()
+		}
+		function prev(){
+			month -=1
+			date=1
+			if(month<=0){
+				year -= 1;
+				month = 12
+			}
+			show()
+		}
+		
+
+		show()
+		</script>
+</body>
+</html>

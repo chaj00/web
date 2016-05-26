@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function calc(){
+			mynum1= window.document.myform.num1.value
+			alert("num1의값=>"+mynum1)
+			myform.num2.value = mynum1*1.56
+		}
+		function exec(testform){
+			//버튼을 마치 submit버튼처럼 활용
+			testform.submit();
+		}
+
+	</script>
+</head>
+<body>
+	<form name="myform">
+		<input type="text" name="num1" onchange="calc()"><br/>
+		<input type="text" name="num2"><br/>
+		<input type="button" value="전송" onclick="exec(this.form)"><br/>
+	</form>
+	<img src="../images/ses_g1.jpg" name="myimg" 
+				onmouseover="myimg.src='../images/ses_g2.jpg'"
+				onmouseout="myimg.src='../images/ses_g1.jpg'"/>
+
+</body>
+</html>

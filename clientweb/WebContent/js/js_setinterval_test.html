@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function showTime(){
+			today = new Date();
+			time = today.getHours()+"시"
+			time = time + today.getMinutes() + "분"
+			time = time + today.getSeconds() + "초"
+			myform.showTime.value = time
+		}
+		function run(){
+			//window.setTimeout(showTime, 2000)
+			timeid = window.setInterval(showTime, 1000)
+		}
+		function stop(){
+			window.clearTimeout(timeid)
+		}
+	
+	</script>
+</head>
+<body onload="run()">
+	<form name="myform">
+		<input type="text" name="showTime">
+		<input type="button" value="중지" onclick="stop()">
+		<input type="button" value="시작" onclick="run()" >
+	
+	</form>
+	
+</body>
+</html>

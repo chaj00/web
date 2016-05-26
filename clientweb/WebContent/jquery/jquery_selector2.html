@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="btns">
+		<input type="button" value="처음만나는 ul요소의 첫번째 li" name="btn" id="ultag" /> 
+		<input type="button" value="모든 ul의 첫번째 li" name="btn" id="ulAll" /> 
+		<input	type="button" value="href속성이 있는 요소" name="btn" id="href" /> 
+		<input type="button" value="특정태그의 속성값" name="btn" id="attrVal" /> 
+		<input type="button" value="모든 button" name="btn" id="inputbutton" /> 
+		<input type="button" value="모든 짝수<tr>" name="btn" id="treven" /> 
+		<input	type="button" value="모든 홀수<tr>" name="btn" id="trodd" />
+		<input	type="button" value="div바로 아래 a자식" name="btn" id="divchild" />
+		<button>나도 버튼</button>
+	</div>
+	<ul>
+		<li>순서가 없는 목록1-1</li>
+		<li>순서가 없는 목록1-2</li>
+		<li>순서가 없는 목록1-3</li>
+		<li>순서가 없는 목록1-4</li>
+		<li>순서가 없는 목록1-5</li>
+	</ul>
+	<ul>
+		<li>순서가 없는 목록2-1</li>
+		<li>순서가 없는 목록2-2</li>
+		<li id="test">순서가 없는 목록2-3</li>
+		<li>순서가 없는 목록2-4</li>
+		<li>순서가 없는 목록2-5</li>
+	</ul>
+	
+	
+	<div>
+		<a>a태그1 - 첫번째 div</a><br/>
+		<a>a태그2 - 첫번째 div</a><br/>
+		<a>a태그2 - 첫번째 div</a><br/>
+	</div>
+	
+	<div>
+		<a>a태그1 - 두번째 div</a><br/>
+		<a>a태그2 - 두번째 div</a><br/>
+		<a>a태그2 - 두번째 div</a><br/>
+		<p><a>p안의 a</a></p>
+	</div>
+	<a>그냥 p</a><br/>
+	
+	<table border="1">
+		<tr>
+			<td>순서</td><td>선택자명</td><td>설명</td>
+		</tr>
+		<tr>
+			<td>1</td><td>태그명</td><td>정의된 태그에 적용</td>
+		</tr>
+		<tr>
+			<td>2</td><td>id</td><td>정의된 id에 적용</td>
+		</tr>
+		<tr>
+			<td>3</td><td>class명</td><td>정의된 class에 적용</td>
+		</tr>
+
+	</table>
+	<a href="#" target="_self">하이퍼링크1</a>
+	<a href="#" target="_self">하이퍼링크2</a>
+	<a href="#" target="_blank">하이퍼링크3</a>
+	<a href="#" target="_self">하이퍼링크4</a>
+	<script type="text/javascript" src="../common/js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#ultag").bind("click",function(){
+				alert("처음 만나는 ul태그의 첫번째 li");
+				//$("ul li:first").css("color", "red");
+				$("div a:first").css("color", "red")
+			}); 
+			$("#ulAll").bind("click",function(){
+				alert("모든 ul의 첫번째 li");
+				//$("ul li:first-child").css("color", "green");
+				$("div a:first-child").css("color", "green")
+			}); 
+			$("#href").bind("click",function(){
+				alert("href속성이 정의된 요소");
+				$("[href]").css("color","skyblue");
+			}); 
+			$("#attrVal").bind("click",function(){
+				alert("특정 태그의 속성 값을 이용하기 - a태그의 target속성이 _blank");
+				$("a[target='_blank']").css("color","orange");
+			}); 
+			$("#inputbutton").bind("click",function(){
+				alert("모든 버튼태그")
+				$(":button").css("color", "skyblue")
+			}); 
+			$("#treven").bind("click",function(){
+				alert("모든 짝수 tr")
+				$("tr:even").css("background-color","yellow")
+			}); 
+			$("#trodd").bind("click",function(){
+				alert("모든 홀수 tr")
+				$("tr:odd").css("background-color","pink")
+			}); 
+			$("#divchild").bind("click",function(){
+				alert("div의 바로 밑의 a자식")
+				$("div > a").css("background-color","orange")
+			}); 
+		});
+	</script>
+</body>
+</html>
+
+
+
+

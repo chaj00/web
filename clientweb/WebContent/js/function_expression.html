@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>함수 호이스팅 테스트</h1>
+	<script type="text/javascript">
+
+		var myfunc = function test(num){
+			if(num>=90){
+				alert("합격")
+			}
+		}
+		myfunc(100)
+		
+		var myfunc2 = function{
+			if(num>=90){
+				alert("합격")
+			}
+		}
+		myfunc2(100)
+	</script>
+</body>
+</html>

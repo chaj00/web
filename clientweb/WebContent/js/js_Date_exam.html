@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		today = new Date();
+		
+		switch(today.getDay()){
+			case 0:
+				day= "일요일";
+				myimg="1.jpg"
+				break;
+			case 1:
+				day="월요일";
+				myimg="2.jpg"
+				break;
+			case 2:
+				day="화요일";
+				myimg="3.jpg"
+				break;
+			case 3:
+				day="수요일";
+				myimg="4.jpg"
+				break;
+			case 4:
+				day="목요일";
+				myimg="5.jpg"
+				break;
+			case 5:
+				day="금요일";
+				myimg="6.jpg"
+				break;
+			case 6:
+				day="토요일";
+				myimg="7.jpg"
+				break;
+			default :
+				break;
+		}
+		
+		document.write("<img src='../images/jang"+myimg+"'/>")
+		
+		hour = today.getHours()
+		if(hour<12){
+			document.bgColor ="#00ff00"
+		}else{
+			document.bgColor ="#ff0000"
+		}
+	</script>
+</body>
+</html>

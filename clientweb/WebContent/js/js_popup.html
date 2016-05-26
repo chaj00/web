@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function showData(zip,addr){
+			//팝업을 오픈시켜준 메인창으로 데이터 넘기기
+			opener.document.myform.zipcode.value=zip
+			opener.document.myform.address.value=addr
+			window.close()
+		}
+	</script>
+</head>
+<body bgcolor="skyblue">
+	<a href="javascript:showData('111','구로동')">구로동</a><br/>
+	<a href="javascript:showData('222','서초동')">서초동</a><br/>
+	<a href="javascript:showData('333','주안동')">주안동</a><br/>
+	<a href="javascript:showData('444','역삼동')">역삼동</a><br/>
+	<a href="javascript:showData('555','신림동')">신림동</a><br/>
+	<a href="javascript:showData('666','사당동')">사당동</a><br/>
+</body>
+</html>

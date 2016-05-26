@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function testconfirm(){
+			result = window.confirm("정말 삭제 할래?")
+			if(result){
+				alert("삭제성공")
+			}else{
+				alert("삭제취소")
+			}
+		}
+		function searchAddress(){
+			//open된 창을 나중에 활용하기 위해 변수로 참조
+			popupView = window.open("js_popup.html", "mywin","width=300, height=300")
+		}
+		function test_number(){
+			mynum1 = parseInt(document.myform.num1.value)
+			mynum2 = parseInt(document.myform.num2.value)
+			document.myform.result.value= mynum1 + mynum2
+
+		}
+		function test_number2(){
+			alert(isNaN(myform.data.value))
+			alert(eval(myform.data.value))
+			data = myform.send.value
+			alert(data)
+			alert(data.length)
+			data2 = data.trim()
+			alert(data2.length)
+		}
+	</script>
+</head>
+<body>
+	<button onClick="window.alert('경고창')">경고창</button>
+	<button onClick="testConfirm()">확인창</button>
+	<button onClick="test_number()">숫자처리메서드</button>
+	<button onClick="test_number2()">숫자처리메서드2</button>
+	<button onClick="window.close()">닫기</button>
+	
+	<form action="" name="myform">
+		우편번호 : <input type="text" name="zipcode"	>
+		<input type="button" value="SEARCH ADDRESS" onClick="searchAddress()">
+		<br>
+		
+		상세주소 : <input type="text" name="address"><br>
+		숫자1 : <input type="text" name="num1" onchange="test_number()"><br>
+		숫자2 : <input type="text" name="num2" onchange="test_number()"><br>
+		결과 : <input type="text" name="result" onfocus="test_number()" ><br>
+		테스트 : <input type="text" name="data"  ><br>
+		<input type="submit" value="  SEND  " name="send">
+	</form>
+</body>
+</html>

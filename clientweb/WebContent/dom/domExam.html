@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload= function(){
+		rootNode = document.getElementById("root");
+		document.getElementById("insert").onclick = function(){
+			newText = document.createTextNode("newP");
+			newNode = document.createElement("p");
+			newNode.setAttribute("style", "background:yellow");
+			newNode.appendChild(newText);	
+			rootNode.appendChild(newNode);
+		}
+		document.getElementById("remove").onclick = function(){
+			rootNode.removeChild(rootNode.lastChild);
+		}
+		document.getElementById("removeall").onclick = function(){
+			num = rootNode.childNodes.length
+			for(i=0;i<num;i++){
+				rootNode.removeChild(rootNode.lastChild);	
+			}
+			
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+	<div id="layer"></div>
+
+	<hr>
+
+	<div id="root">
+		<p style="background: gray;">line01</p>
+		<p style="background: skyblue">line02</p>
+		<p style="background: green">line03</p>
+		<p style="background: red">line04</p>
+	</div>
+
+	<hr>
+	<button id="insert" >P태그추가하기</button>
+	<button id="remove">P태그삭제하기</button>
+	<button id="removeall">div안의 모든 p태그 삭제하기</button>
+	<button >innerHTML</button>
+
+
+</body>
+</html>

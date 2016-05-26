@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>Insert title here</title>
+<script src="../common/js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+/*
+//요소의 뒤와 요소의 끝은 요소안과 밖의 차이
+append()->선택된 요소의 끝에 새로운 컨텐츠 추가(요소안)
+prepend()->선택된 요소의 처음에 새로운 컨텐츠 추가
+after()->선택된 요소의 뒤에 새로운 컨텐츠 추가(요소밖)
+before()->선택된 요소의 앞에 새로운 컨텐츠 추가
+remove()-> 선택된 요소와 그 자식 요소를 삭제
+empty()->선택된 요소의 자식요소 삭제
+*/
+	data = $("<p>dom액세스 테스트</P>");
+	$(document).ready(function(){
+		//alert("jquery");
+		$("#append").bind("click", function(){
+			$("#btns").append(data);
+		});
+		
+		$("#after").bind("click", function(){
+			$("#btns").after(data);	
+		});
+		
+		$("#before").bind("click", function(){
+			$("#btns").before(data);	
+		});
+		$("#prepend").bind("click", function(){
+			$("#btns").prepend(data);	
+		});
+		$("#remove").bind("click", function(){
+			$("#btns").remove();	
+		});
+		$("#empty").on("click", function(){
+			$("#btns").empty();	
+		});
+		$("#delete").on("click", function(){
+			$("#btns").children().last().remove();	
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="main">
+		<div id="result"></div>
+		<input type="number" id="data"/>
+		<div id="domtestbtn">
+			<form id="myformId" name="myform">	
+				<input type="text" id="test"/>
+				<div id="btns" style="border:solid 1px blue">	
+					<input type="button" value=delete
+						 name="btn" id="delete" />
+					<input type="button" value="append"
+						 name="btn" id="append" />
+					<input type="button" value="prepend"
+						 name="btn" id="prepend" />
+						 
+					<input type="button" value="after"
+						 name="btn" id="after" />
+					<input type="button" value="before"
+						 name="btn" id="before" />
+				
+					<input type="button" value="remove"
+						 name="btn" id="remove" />
+					<input type="button" value=empty
+						 name="btn" id="empty" />
+				
+				</div>
+				<input type="text" id="test"/>
+			</form>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+

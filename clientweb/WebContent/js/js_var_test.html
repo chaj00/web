@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		num1=100;
+		num2=200;
+		function test1(){
+			result = num1+num2;
+			num3 = 300;
+			var num4 = 400;
+			alert("test1함수에서 num1과 num2를 사용=>"+result);
+		}
+		function test2(){
+			result = num1+num2;
+			alert("test2함수에서 num1과 num2를 사용=>"+result);
+			alert("test2함수에서 num3을 사용=>"+num3);
+			alert("test2함수에서 num4을 사용=>"+num4);
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		test1();
+		test2();
+		alert("body내에서 num1을 호출=>"+num1)
+		alert("body내에서 num3을 사용=>"+num3);
+		
+	</script>
+</body>
+</html>

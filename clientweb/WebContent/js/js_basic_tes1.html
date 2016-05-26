@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<!-- 4. 외부문서로 작성된 파일을 연결 -->
+	<script type="text/javascript" src="../common/js/test.js"></script>
+	<!-- 2. <head>태그안에 function을 정의하고 호출해서 사용하기 -->
+	<script type="text/javascript">
+		function test() {
+			num = 100;
+			alert("테스트" + num);
+	
+		}
+	</script>
+
+</head>
+<body>
+	<!--1. <body>태그안에 정의하고 사용  -->
+	<script type="text/javascript">
+		//한 줄 주석
+		/*여러 
+		  줄 주석 */
+		document.writeln("<h1>브라우저에 데이터출력</h1>");
+		//head태그에서 정의한 함수를 호출
+		test();
+		str = "문자열"
+		document.write("str의 값=>" + str)
+		str = 100 + 200
+		document.write("str의 값=>" + str)
+	</script>
+	<!-- 3. 태그 내부에서 inline으로 삽입 -->
+	<input type="button" value="자바스크립트 호출" 
+				onclick="test();alert('버튼을누른다.')"/>
+				
+	<!-- 4. 외부문서로 정의된 자바스크립트 명령문 사용하기 -->
+	<a href="javascript:test2()">테스트</a>
+
+</body>
+</html>

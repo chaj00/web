@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+		<table border="1" width="350"> 
+
+		<tr align="center">
+			<td colspan="2">회원가입</td>
+		</tr>
+		
+		<tr>
+			<td width="100">이름</td>
+			<td><input type="text" size="20" maxlength="10" name ="name">  </td>
+		</tr>
+		
+		<tr>
+			<td width="100">사용자ID</td>
+			<td><input type="text" size="20" maxlength="10" name ="id">  </td>
+		</tr>
+		
+		<tr>
+			<td width="100">암호</td>
+			<td><input type="password" size="20" maxlength="10" name ="pass">  </td>
+		</tr>
+		
+		<tr>
+			<td width="100">암호확인</td>
+			<td><input type="password" size="30" maxlength="10" name ="passchk">  </td>
+		</tr>
+		
+		<tr>
+			<td width="100">주민등록번호</td>
+			<td><input type="text" size="10" maxlength="10" name ="birth">  
+				<input type="text" size="10" maxlength="10" name ="regisernum"></td>
+		</tr>
+		
+		<tr>
+			<td width="100">전화번호</td>
+			<td><input type="text" size="6" maxlength="5" name ="areacode">-  
+				<input type="text" size="6" maxlength="5" name ="frontnum">-
+				<input type="text" size="6" maxlength="5" name ="backnum"></td>
+		</tr>
+		
+		<tr>
+			<td width="100">성별</td>
+			<td><input type="radio" name=sex value="man">남자
+				<input type="radio" name=sex value="woman">여자</td>
+		</tr>
+		
+		<tr>
+			<td width="100">직업</td>
+			<td>
+				<select name="job">
+					<option> 선택하여주십시오
+					<option value="engineer">엔지니어
+					<option value="lawer">변호사
+					<option value="doctor">의사
+					<option value="artist">예술가
+				</select>
+			</td>
+		</tr>	
+		
+		<tr>
+			<td width="100">email주소</td>
+			<td><input type="text" size="20" name="email">
+		
+		</tr>
+		
+		<tr align="center">
+			<td colspan="2"> 
+				<input type="button" value="가입신청" name="regist">
+				<input type="button" value="취소" name="cancle">
+		</tr>
+		
+		</table>
+	
+</body>
+</html>

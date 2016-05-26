@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		width: 500px
+	}
+</style>
+<script type="text/javascript">
+	function createAddRow(){
+		//1. 테이블에 row가 추가될때 삽입될 폼객체를 생성
+		var name = document.createElement("input");
+		name.setAttribute("type", "text");
+		
+		var age = document.createElement("input");
+		age.setAttribute("type", "text");
+		age.setAttribute("size", "35");
+		
+		var btndel = document.createElement("input");
+		btndel.setAttribute("type", "button")
+		btndel.setAttribute("value", "삭제")
+		
+		//2.행이추가될 테이블을 찾아오기
+		var mytable = document.getElementById("tablelist");
+		
+		//3. 테이블에 행을 추가
+		alert(mytable.rows.length)
+		var row= mytable.insertRow(mytable.rows.length);
+		
+		//4. 행에 각 셀을 추가하기
+		var mycell0 = row.insertCell(0)
+		var mycell1 = row.insertCell(1)
+		var mycell2 = row.insertCell(2)
+		
+		//5. 셀에 양식태그를 추가하기
+		mycell0.appendChild(name)
+		mycell1.appendChild(age)
+		mycell2.appendChild(btndel)
+		
+		
+		
+
+		
+	}
+</script>
+</head>
+<body>
+	<h1>테이블 Dynamic생성</h1>
+	<form name="myform">
+	<input type="button" value="행추가" onclick="createAddRow()" >
+	<table id="tablelist">
+		<tr bgcolor="skyblue">
+			<th>이름</th>
+			<th>나이</th>
+			<th>삭제</th>
+		</tr>
+	
+	</table>
+	</form>
+</body>
+</html>
